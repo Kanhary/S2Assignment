@@ -138,6 +138,12 @@ h6 {
   color: var(--dark);
 }
 
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
 h1 {
   font-size: 3rem;
   letter-spacing: -1px;

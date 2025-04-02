@@ -149,7 +149,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <!-- Sidebar -->
-    <?php include 'includes/sidebar.php'; ?>
+    <?php include 'includes/header.php';?>
 
     <!-- Main Content -->
     <main class="main-content">

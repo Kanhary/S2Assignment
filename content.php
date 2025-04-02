@@ -10,7 +10,7 @@ require_once 'includes/functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">z
 
     <style>
         /* General Styles */
@@ -295,6 +295,6 @@ h3 {
         <!-- <?php include 'includes/footer.php'; ?> -->
     </div>
 
-    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

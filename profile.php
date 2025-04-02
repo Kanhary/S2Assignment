@@ -71,6 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-left: 680px;
         }
 
         .profile-card {
@@ -171,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p class="role"><?php echo ucfirst($user['role']); ?></p>
                     </div>
 
-                    <button type="submit">Save Changes</button>
+                    <!-- <button type="submit">Save Changes</button> -->
                 </form>
             </div>
         </div>

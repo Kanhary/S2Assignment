@@ -185,7 +185,7 @@ session_start();
 <div class="sidebar" role="navigation">
     <h2>Assignment System</h2>
     <ul>
-        <li><a href="index.php" aria-label="Go to Home">Home</a></li>
+        <li><a href="content.php" aria-label="Go to Home">Home</a></li>
 
         <?php if(isset($_SESSION['user_id'])): ?>
             <?php if($_SESSION['user_role'] == 'teacher'): ?>
