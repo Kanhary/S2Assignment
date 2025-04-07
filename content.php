@@ -10,206 +10,199 @@ require_once 'includes/functions.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">z
 
     <style>
         /* General Styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f6f9;
-            color: #34495e;
-            margin: 0;
-            padding: 0;
-        }
 
-        /* Container to hold the sidebar and main content */
-        .container {
-            display: flex;
-            min-height: 100vh;
-        }
 
-        /* Main content area */
-        main {
-            margin-left: 250px;
-            padding: 20px;
-            width: 100%;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: margin-left 0.3s ease;
-        }
+/* Container to hold the sidebar and main content */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
 
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
 
-        h3 {
-            color: #34495e;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
 
-        /* Dashboard container */
-        .dashboard {
-            padding: 20px;
-            border-radius: 8px;
-            background-color: #ecf0f1;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
+/* Main content area */
+main {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    /* background-color: white; */
+}
 
-        /* Buttons */
-        .btn {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            display: inline-block;
-            margin-right: 10px;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
+/* h2 {
+    color: #2c3e50;
+} */
 
-        .btn:hover {
-            background-color: #2980b9;
-        }
+h3 {
+    color: #34495e;
+}
 
-        .btn-small {
-            background-color: #e67e22;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            margin-top: 5px;
-            transition: background-color 0.3s ease;
-        }
+/* Dashboard container */
+.dashboard {
+    padding: 20px;
+    /* background-color: white; */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+}
 
-        .btn-small:hover {
-            background-color: #d35400;
-        }
+/* Buttons */
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
 
-        /* Assignments list */
-        .assignments-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
+.btn:hover {
+    background-color: #2980b9;
+}
 
-        .assignment-card {
-            background-color: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            width: calc(33% - 20px);
-            box-sizing: border-box;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
-        }
+.btn-small {
+    background-color: #e67e22;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
 
-        .assignment-card:hover {
-            transform: translateY(-5px);
-        }
+.btn-small:hover {
+    background-color: #d35400;
+}
 
-        .assignment-card h4 {
-            color: #2c3e50;
-            margin: 0;
-        }
+/* Assignments list */
+.assignments-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-        .assignment-card p {
-            color: #7f8c8d;
-        }
+.assignment-card {
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
 
-        .due-date {
-            font-weight: bold;
-        }
+.assignment-card:hover {
+    transform: translateY(-10px);
+}
 
-        .status {
-            margin-top: 10px;
-        }
+.assignment-card h4 {
+    color: #2c3e50;
+    margin: 0;
+}
 
-        .pending {
-            color: #e74c3c;
-        }
+.assignment-card p {
+    color: #7f8c8d;
+}
 
-        .submitted {
-            color: #2ecc71;
-        }
+.due-date {
+    font-weight: bold;
+}
 
-        /* Welcome section */
-        .welcome {
-            text-align: center;
-            margin-top: 50px;
-        }
+.status {
+    margin-top: 10px;
+}
 
-        .welcome h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-        }
+.pending {
+    color: #e74c3c;
+}
 
-        .auth-buttons {
-            margin-top: 20px;
-        }
+.submitted {
+    color: #2ecc71;
+}
 
-        .btn-primary {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-right: 10px;
-        }
+/* Welcome section */
+.welcome {
+    text-align: center;
+    margin-top: 50px;
+}
 
-        .btn-secondary {
-            background-color: #95a5a6;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-        }
+.welcome h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+}
 
-        .btn-primary:hover {
-            background-color: #2980b9;
-        }
+.auth-buttons {
+    margin-top: 20px;
+}
 
-        .btn-secondary:hover {
-            background-color: #7f8c8d;
-        }
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-right: 10px;
+}
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            main {
-                margin-left: 0;
-                padding: 10px;
-            }
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
 
-            .assignments-list {
-                flex-direction: column;
-            }
+.btn-primary:hover {
+    background-color: #2980b9;
+}
 
-            .assignment-card {
-                width: 100%;
-            }
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
 
-            .dashboard-actions {
-                flex-direction: column;
-                gap: 10px;
-            }
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
 
-            .btn {
-                width: 100%;
-                margin-bottom: 10px;
-            }
+    main {
+        margin-left: 200px;
+    }
 
-            .assignment-actions {
-                display: flex;
-                flex-direction: column;
-            }
+    .assignments-list {
+        flex-direction: column;
+    }
 
-            .btn-small {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-        }
+    .assignment-card {
+        width: 100%;
+    }
+
+    .dashboard-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .assignment-actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btn-small {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
     </style>
     
 </head>
@@ -302,6 +295,6 @@ require_once 'includes/functions.php';
         <!-- <?php include 'includes/footer.php'; ?> -->
     </div>
 
-    <!-- <script src="assets/js/script.js"></script> -->
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
