@@ -1,6 +1,6 @@
-<!-- <?php
-session_start();
-?> -->
+<?php
+// session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,9 +26,9 @@ session_start();
 
         /* Sidebar */
         .sidebar {
-            width: 280px;
+            width: 260px;
             height: 100vh;
-            background: #1c2833;
+            background: #1e293b;
             color: white;
             position: fixed;
             top: 0;
@@ -40,9 +40,10 @@ session_start();
 
         .sidebar h2 {
             text-align: center;
-            margin-bottom: 25px;
-            font-size: 24px;
-            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
         }
 
         .sidebar ul {
@@ -51,31 +52,31 @@ session_start();
         }
 
         .sidebar ul li {
-            padding: 14px 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            cursor: pointer;
-            position: relative;
             display: flex;
             align-items: center;
+            padding: 14px 20px;
+            cursor: pointer;
             transition: background 0.3s ease;
         }
 
         .sidebar ul li a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
             flex-grow: 1;
+            font-size: 16px;
         }
 
         .sidebar ul li:hover {
-            background: #2c3e50;
+            background: #334155;
         }
 
         /* Dropdown Menu */
         .dropdown .dropdown-content {
             display: none;
             flex-direction: column;
-            background: #253347;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: #334155;
+            padding-left: 20px;
+            transition: all 0.3s;
         }
 
         .dropdown.active .dropdown-content {
@@ -83,15 +84,15 @@ session_start();
         }
 
         .dropdown-content a {
-            padding: 12px 20px;
-            color: white;
+            padding: 10px 15px;
+            color: #e2e8f0;
             text-decoration: none;
             font-size: 14px;
             transition: background 0.3s;
         }
 
         .dropdown-content a:hover {
-            background: #3b4d66;
+            background: #475569;
         }
 
         .dropdown-toggle {
@@ -100,33 +101,31 @@ session_start();
             align-items: center;
         }
 
-        .dropdown-toggle span {
-            font-size: 12px;
-            opacity: 0.7;
-        }
-
         /* Main Content */
         .main-content {
-            margin-left: 280px;
+            margin-left: 260px;
             padding: 30px;
             width: 100%;
             transition: margin-left 0.3s ease;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .main-content h1 {
             font-size: 24px;
             margin-bottom: 10px;
+            color: #1e293b;
         }
 
         /* Mobile Sidebar */
         .menu-toggle {
             display: none;
             position: absolute;
-            top: 20px;
-            left: 20px;
-            background: #1c2833;
+            top: 15px;
+            left: 15px;
+            background: #1e293b;
             color: white;
-            padding: 12px;
+            padding: 10px 12px;
             border: none;
             cursor: pointer;
             font-size: 18px;
@@ -136,7 +135,7 @@ session_start();
         }
 
         .menu-toggle:hover {
-            background: #2c3e50;
+            background: #334155;
         }
 
         /* Overlay for Mobile */
@@ -153,7 +152,7 @@ session_start();
 
         @media (max-width: 768px) {
             .sidebar {
-                transform: translateX(-280px);
+                transform: translateX(-260px);
             }
 
             .sidebar.active {
@@ -189,18 +188,18 @@ session_start();
 
         <?php if(isset($_SESSION['user_id'])): ?>
             <?php if($_SESSION['user_role'] == 'teacher'): ?>
-                <li class="dropdown" aria-haspopup="true">
-                    <a href="#" class="dropdown-toggle" aria-expanded="false">Actions <span>▼</span></a>
-                    <div class="dropdown-content" aria-hidden="true">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Actions <span>▼</span></a>
+                    <div class="dropdown-content">
                         <a href="create-assignment.php">Create Assignment</a>
                         <a href="view-submissions.php">View Submissions</a>
                         <a href="manage-classes.php">Manage Classes</a>
                     </div>
                 </li>
             <?php else: ?>
-                <li class="dropdown" aria-haspopup="true">
-                    <a href="#" class="dropdown-toggle" aria-expanded="false">Actions <span>▼</span></a>
-                    <div class="dropdown-content" aria-hidden="true">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Actions <span>▼</span></a>
+                    <div class="dropdown-content">
                         <a href="my-assignments.php">My Assignments</a>
                         <a href="my-submissions.php">My Submissions</a>
                     </div>
@@ -215,12 +214,6 @@ session_start();
         <?php endif; ?>
     </ul>
 </div>
-
-<!-- Main Content -->
-<!-- <div class="main-content">
-    <h1>Welcome to the Assignment Collection System</h1>
-    <p>This system helps students and teachers manage assignments effectively.</p>
-</div> -->
 
 <!-- JavaScript -->
 <script>
@@ -246,19 +239,20 @@ session_start();
         dropdownToggles.forEach(toggle => {
             toggle.addEventListener('click', function (event) {
                 event.preventDefault();
-                const parent = this.parentElement;
-                const content = parent.querySelector('.dropdown-content');
+                this.parentElement.classList.toggle('active');
+                const dropdownContent = this.nextElementSibling;
 
-                parent.classList.toggle('active');
-                content.setAttribute('aria-hidden', content.classList.contains('active') ? 'false' : 'true');
-                toggle.setAttribute('aria-expanded', parent.classList.contains('active') ? 'true' : 'false');
+                if (this.parentElement.classList.contains('active')) {
+                    dropdownContent.style.display = 'flex';
+                } else {
+                    dropdownContent.style.display = 'none';
+                }
 
                 // Close other dropdowns
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    if (dropdown !== parent) {
-                        dropdown.classList.remove('active');
-                        dropdown.querySelector('.dropdown-content').setAttribute('aria-hidden', 'true');
-                        dropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                dropdownToggles.forEach(otherToggle => {
+                    if (otherToggle !== this) {
+                        otherToggle.parentElement.classList.remove('active');
+                        otherToggle.nextElementSibling.style.display = 'none';
                     }
                 });
             });

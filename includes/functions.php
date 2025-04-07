@@ -196,7 +196,7 @@ function updateAssignment($id, $title, $description, $due_date) {
 // Database connection (example using PDO)
 function getDbConnection() {
     $host = 'localhost';
-    $dbname = 'assignment_collection'; // Change this to your database name
+    $dbname = 'assignment_system'; // Change this to your database name
     $username = 'root'; // Your database username
     $password = ''; // Your database password (empty for WAMP default)
     

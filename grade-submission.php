@@ -66,7 +66,138 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grade Submission - Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <style>
+
+        .container {
+            width: 100%;
+            display: flex;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        main {
+            flex: 1;
+            padding: 40px;
+            /* background-color: #f4f7fb; */
+            margin-left: 260px; /* Adjust based on sidebar width */
+            box-sizing: border-box;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .btn-small {
+            background-color: #3c8dbc;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-size: 14px;
+            display: inline-block;
+        }
+        .btn-small:hover {
+            background-color: #367fa9;
+        }
+        h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .submission-info {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .submission-info h3 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .submission-info p {
+            font-size: 16px;
+            color: #666;
+            margin: 5px 0;
+        }
+        .submission-content {
+            margin-top: 20px;
+        }
+        .content-box {
+            background-color: #fff;
+            border: 1px solid #e1e1e1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+        }
+        .submission-file {
+            margin-top: 20px;
+        }
+        .file-link {
+            color: #3c8dbc;
+            text-decoration: none;
+        }
+        .file-link:hover {
+            text-decoration: underline;
+        }
+        .grading-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+        .grading-form h4 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-group button {
+            background-color: #3c8dbc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-group button:hover {
+            background-color: #367fa9;
+        }
+        .error-message, .success-message {
+            background-color: #f2dede;
+            color: #a94442;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .success-message {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -132,4 +263,3 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </body>
 </html>
-
