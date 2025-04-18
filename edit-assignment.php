@@ -53,10 +53,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Assignment</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+            body {
+            font-family: 'Arial', sans-serif;
+            /* background-color: #f0f4f8; */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+           
+        }
+        main {
+            margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+            /* background-color: #ffffff; */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: margin-left 0.3s ease;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
+
     <?php include 'includes/sidebar.php'; ?>
 
     <div class="assignment-form">
@@ -82,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <!-- <?php include 'includes/footer.php'; ?> -->
-</div>
+
 
 </body>
 </html>

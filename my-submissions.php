@@ -52,10 +52,203 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Submissions - Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+    <style>
+    /* Reset and base styling */
+/* Base Reset and Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+main {
+  margin-left: 260px;
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 24px;
+  padding-left: 12px;
+  border-left: 4px solid #3b82f6;
+}
+
+.submission-details,
+.submissions-table {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.submission-details h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.submission-info p {
+  font-size: 15px;
+  color: #4b5563;
+  margin: 6px 0;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.content-box {
+  background-color: #f3f4f6;
+  border-left: 4px solid #3b82f6;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.file-link {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.file-link:hover {
+  color: #1d4ed8;
+}
+
+.grade {
+  font-size: 17px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.not-graded {
+  font-size: 14px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 9999px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.status-graded {
+  background-color: #22c55e;
+}
+
+.status-pending {
+  background-color: #f59e0b;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+th,
+td {
+  padding: 16px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #3b82f6;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-small:hover {
+  background-color: #2563eb;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+  main {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  table,
+  th,
+  td {
+    font-size: 13px;
+  }
+
+  .submission-details,
+  .submissions-table {
+    padding: 20px;
+  }
+
+  .btn-small {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+</style>
+
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container"> -->
         <?php include 'includes/sidebar.php'; ?>
         
         <main>
@@ -163,7 +356,7 @@ if(isset($_GET['id']) && is_numeric($_GET['id'])) {
         </main>
         
         <!-- <?php include 'includes/footer.php'; ?> -->
-    </div>
+    <!-- </div> -->
 </body>
 </html>
 

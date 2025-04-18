@@ -31,11 +31,164 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Assignment</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+    <!-- Inside your <head> tag -->
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        background-color: #eef2f7;
+    }
+
+    .assignment-detail {
+        margin-left: 250px;
+        padding: 40px;
+        width: calc(100% - 250px);
+        background-color: #ffffff;
+        border-radius: 12px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+        transition: margin-left 0.3s ease;
+    }
+
+    h2 {
+        margin-top: 0;
+        font-size: 28px;
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.8;
+        font-size: 16px;
+        color: #555;
+    }
+
+    strong {
+        color: #2c3e50;
+    }
+
+    .assignment-actions {
+        margin-top: 25px;
+    }
+
+    .assignment-actions .btn {
+        text-decoration: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        margin-right: 12px;
+        font-size: 15px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-block;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-primary {
+        background-color: #3498db;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background-color: #2980b9;
+    }
+
+    .btn-danger {
+        background-color: #e74c3c;
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        background-color: #c0392b;
+    }
+
+    .btn-download {
+        background-color: #2ecc71;
+        color: #fff;
+        padding: 9px 16px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        transition: background 0.3s ease;
+        display: inline-block;
+        margin-top: 10px;
+    }
+
+    .btn-download:hover {
+        background-color: #27ae60;
+    }
+
+    .status {
+        padding: 6px 14px;
+        border-radius: 25px;
+        font-size: 13px;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+    .submitted {
+        background-color: #27ae60;
+        color: white;
+    }
+
+    .pending {
+        background-color: #f39c12;
+        color: white;
+    }
+
+    .welcome {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .welcome h2 {
+        color: #555;
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .welcome .btn-primary {
+        margin-top: 15px;
+        display: inline-block;
+    }
+
+    @media (max-width: 768px) {
+        .assignment-detail {
+            margin-left: 0;
+            width: 100%;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        .assignment-actions .btn,
+        .btn-download {
+            font-size: 14px;
+            padding: 9px 14px;
+        }
+
+        .welcome h2 {
+            font-size: 20px;
+        }
+    }
+</style>
+
+
 </head>
 <body>
 
-<div class="container">
+
     <?php include 'includes/sidebar.php'; ?>
 
     <div class="assignment-detail">
@@ -76,8 +229,8 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
         <?php endif; ?>
     </div>
 
-    <?php include 'includes/footer.php'; ?>
-</div>
+
+
 
 </body>
 </html>

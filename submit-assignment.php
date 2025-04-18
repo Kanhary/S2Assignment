@@ -83,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container">
+
         <?php include 'includes/sidebar.php'; ?>
         
         <main>
@@ -123,8 +123,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </main>
         
-        <?php include 'includes/footer.php'; ?>
-    </div>
+        <!-- <?php include 'includes/footer.php'; ?> -->
+
 </body>
 </html>
 

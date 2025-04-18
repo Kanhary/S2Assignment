@@ -221,3 +221,11 @@ function getSubmissionById($submission_id) {
     
     return $submission;
 }
+function getSubmittedFilesByAssignmentId($assignment_id) {
+    global $pdo;
+
+    $stmt = $pdo->prepare("SELECT file_name FROM submissions WHERE assignment_id = ?");
+    $stmt->execute([$assignment_id]);
+    return $stmt->fetchAll();
+}
+

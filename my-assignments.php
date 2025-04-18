@@ -84,9 +84,154 @@ usort($filtered_assignments, function($a, $b) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Assignments - Assignment Collection System</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Assignment Page Enhancements */
+main {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    padding: 40px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.assignment-card, .assignment-details {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+.assignment-card:hover {
+    transform: scale(1.01);
+}
+
+.assignment-card.submitted {
+    border-left: 5px solid #2ecc71;
+}
+.assignment-card.overdue {
+    border-left: 5px solid #e74c3c;
+}
+
+.assignment-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.assignment-info p,
+.assignment-card p {
+    margin: 6px 0;
+    color: #666;
+    font-size: 15px;
+}
+
+.due-date span,
+.overdue-label,
+.due-soon-label {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.overdue-label {
+    color: #e74c3c;
+}
+.due-soon-label {
+    color: #f39c12;
+}
+.status-submitted,
+.status-graded {
+    color: #2ecc71;
+}
+.status-not-submitted,
+.status-pending {
+    color: #e67e22;
+}
+.status-graded {
+    font-weight: bold;
+}
+
+.assignment-actions {
+    margin-top: 15px;
+}
+.assignment-actions .btn,
+.assignment-actions .btn-small {
+    padding: 8px 14px;
+    margin-right: 10px;
+    background: #3498db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+.assignment-actions .btn:hover,
+.assignment-actions .btn-small:hover {
+    background: #2980b9;
+}
+
+.filter-controls {
+    margin-bottom: 25px;
+}
+.filter-controls p {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.filter-link {
+    text-decoration: none;
+    margin-right: 12px;
+    padding: 6px 12px;
+    background: #ecf0f1;
+    border-radius: 4px;
+    color: #2c3e50;
+}
+.filter-link.active {
+    background: #3498db;
+    color: white;
+}
+
+.description-box, .feedback-box {
+    background-color: #f4f6f8;
+    border-radius: 6px;
+    padding: 10px;
+    white-space: pre-line;
+    font-size: 15px;
+}
+
+.no-assignments {
+    text-align: center;
+    font-size: 16px;
+    color: #888;
+    margin-top: 40px;
+}
+
+.back-link a {
+    text-decoration: none;
+    background: #7f8c8d;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+.back-link a:hover {
+    background: #34495e;
+}
+
+    </style>
 </head>
 <body>
-    <div class="container">
+    <!-- <div class="container"> -->
         <?php include 'includes/sidebar.php'; ?>
         
         <main>
@@ -227,7 +372,7 @@ usort($filtered_assignments, function($a, $b) {
         </main>
         
         <!-- <?php include 'includes/footer.php'; ?> -->
-    </div>
+    <!-- </div> -->
 </body>
 </html>
 

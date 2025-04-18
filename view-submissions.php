@@ -177,7 +177,7 @@ $assignments = getTeacherAssignments($_SESSION['user_id']);
      </style>
 </head>
 <body>
-    <div class="container">
+
         <?php include 'includes/sidebar.php'; ?>
         
         <main class="main-content">
@@ -242,7 +242,6 @@ $assignments = getTeacherAssignments($_SESSION['user_id']);
             <?php endif; ?>
         </main>
         
-        <!-- <?php include 'includes/footer.php'; ?> -->
-    </div>
+
 </body>
 </html>

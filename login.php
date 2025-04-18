@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            /* justify-content: center;
+            align-items: center; */
            
         }
 
@@ -174,7 +174,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <!-- Sidebar -->
-    <?php include 'includes/header.php';?>
+    <?php include 'includes/sidebar.php';?>
 
     <!-- Main Content -->
     <main class="main-content">

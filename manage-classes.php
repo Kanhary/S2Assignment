@@ -211,11 +211,137 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Classes - Assignment Collection System</title>
     <style>
-        
-    </style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+
+    /* header {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+    } */
+
+    main {
+        margin-left: 250px;
+            padding: 20px;
+            width: 100%;
+            /* background-color: #ffffff; */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: margin-left 0.3s ease;
+    }
+
+    h2, h3, h4 {
+        font-size: 1.5em;
+        color: #333;
+    }
+
+    .error-message, .success-message {
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        color: #fff;
+    }
+
+    .error-message {
+        background-color: #f44336;
+    }
+
+    .success-message {
+        background-color: #4CAF50;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1em;
+    }
+
+    .form-group button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    .form-group button:hover {
+        background-color: #45a049;
+    }
+
+    .btn-small {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9em;
+    }
+
+    .btn-small:hover {
+        background-color: #0056b3;
+    }
+
+    .classes-list table, .class-students table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .classes-list th, .class-students th, .classes-list td, .class-students td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .classes-list th, .class-students th {
+        background-color: #f4f4f4;
+    }
+
+    .add-student form {
+        margin-top: 20px;
+    }
+
+    .back-link {
+        margin-top: 10px;
+    }
+
+    .back-link a {
+        color: #007bff;
+        text-decoration: none;
+    }
+
+    .back-link a:hover {
+        text-decoration: underline;
+    }
+
+    .manage-students, .edit-class, .create-class, .classes-list {
+        margin-top: 20px;
+    }
+</style>
+
+
 </head>
 <body>
-    <div class="container">
         <?php include 'includes/sidebar.php'; ?>
         
         <main>
@@ -378,9 +504,7 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
                 </div>
             <?php endif; ?>
         </main>
-        
-        <!-- <?php include 'includes/footer.php'; ?> -->
-    </div>
+
 </body>
 </html>
 

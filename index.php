@@ -16,10 +16,13 @@ require_once 'includes/functions.php';
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f4f6f9;
-            color: #34495e;
+            /* background-color: #f0f4f8; */
             margin: 0;
             padding: 0;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+           
         }
 
         /* Container to hold the sidebar and main content */
@@ -214,7 +217,7 @@ require_once 'includes/functions.php';
     
 </head>
 <body>
-    <div class="container">
+    
         <?php include 'includes/sidebar.php'; ?>
 
         <main>
@@ -300,7 +303,6 @@ require_once 'includes/functions.php';
         </main>
 
         <!-- <?php include 'includes/footer.php'; ?> -->
-    </div>
 
     <!-- <script src="assets/js/script.js"></script> -->
 </body>

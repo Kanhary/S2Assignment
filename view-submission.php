@@ -25,12 +25,12 @@ if (!$submission) {
     <title>View Submission - Assignment Collection System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        /* body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-        } */
+        }
         .container {
             width: 100%;
             display: flex;
@@ -132,7 +132,7 @@ if (!$submission) {
     </style>
 </head>
 <body>
-    <div class="container">
+
         <?php include 'includes/sidebar.php'; ?>
 
         <main>
@@ -191,6 +191,6 @@ if (!$submission) {
                 </div>
             </section>
         </main>
-    </div>
+
 </body>
 </html>

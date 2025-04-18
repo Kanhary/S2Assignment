@@ -2061,9 +2061,11 @@ table td {
   }
 
   main {
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 48px 32px;
+    background-color: #f4f6f8;
+    min-height: 100vh;
   }
 
   .assignment-card,

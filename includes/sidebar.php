@@ -1,263 +1,212 @@
-<?php
-// session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment Collection System</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Arial", sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sidebar-bg: #1e293b;
+      --sidebar-hover: #334155;
+      --text-light: #e2e8f0;
+      --accent: #38bdf8;
+      --text-muted: #94a3b8;
+      --font-main: 'Inter', sans-serif;
+    }
 
-        body {
-            display: flex;
-            min-height: 100vh;
-            background-color: #f4f6f9;
-            transition: background-color 0.3s ease;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-main);
+    }
 
-        /* Sidebar */
-        .sidebar {
-            width: 260px;
-            height: 100vh;
-            background: #1e293b;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding-top: 20px;
-            transition: transform 0.3s ease;
-            box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.2);
-        }
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f8fafc;
+    }
 
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
-        }
+    .sidebar {
+      width: 250px;
+      background-color: var(--sidebar-bg);
+      padding: 30px 20px;
+      color: var(--text-light);
+      position: fixed;
+      height: 100vh;
+      overflow-y: auto;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    }
 
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
+    .sidebar h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 40px;
+      text-align: center;
+    }
 
-        .sidebar ul li {
-            display: flex;
-            align-items: center;
-            padding: 14px 20px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
+    .sidebar nav a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-light);
+      padding: 12px 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
 
-        .sidebar ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            flex-grow: 1;
-            font-size: 16px;
-        }
+    .sidebar nav a:hover {
+      background-color: var(--sidebar-hover);
+    }
 
-        .sidebar ul li:hover {
-            background: #334155;
-        }
+    .sidebar nav svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--text-muted);
+    }
 
-        /* Dropdown Menu */
-        .dropdown .dropdown-content {
-            display: none;
-            flex-direction: column;
-            background: #334155;
-            padding-left: 20px;
-            transition: all 0.3s;
-        }
+    .main {
+      margin-left: 250px;
+      padding: 40px;
+      flex: 1;
+    }
 
-        .dropdown.active .dropdown-content {
-            display: flex;
-        }
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+      }
 
-        .dropdown-content a {
-            padding: 10px 15px;
-            color: #e2e8f0;
-            text-decoration: none;
-            font-size: 14px;
-            transition: background 0.3s;
-        }
+      .sidebar.active {
+        transform: translateX(0);
+      }
 
-        .dropdown-content a:hover {
-            background: #475569;
-        }
+      .main {
+        margin-left: 0;
+        padding: 20px;
+      }
 
-        .dropdown-toggle {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 260px;
-            padding: 30px;
-            width: 100%;
-            transition: margin-left 0.3s ease;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .main-content h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #1e293b;
-        }
-
-        /* Mobile Sidebar */
-        .menu-toggle {
-            display: none;
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #1e293b;
-            color: white;
-            padding: 10px 12px;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-            z-index: 1000;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-
-        .menu-toggle:hover {
-            background: #334155;
-        }
-
-        /* Overlay for Mobile */
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-260px);
-            }
-
-            .sidebar.active {
-                transform: translateX(0);
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .overlay.active {
-                display: block;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding: 20px;
-            }
-        }
-    </style>
+      .toggle-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: var(--sidebar-bg);
+        color: white;
+        border: none;
+        padding: 10px 12px;
+        font-size: 18px;
+        border-radius: 6px;
+        z-index: 1001;
+        cursor: pointer;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<!-- Sidebar Toggle Button -->
-<button class="menu-toggle" aria-label="Toggle Sidebar">☰</button>
-<div class="overlay" aria-hidden="true"></div>
+<!-- Toggle Button for Mobile -->
+<button class="toggle-btn" onclick="toggleSidebar()">☰</button>
 
 <!-- Sidebar -->
-<div class="sidebar" role="navigation">
-    <h2>Assignment System</h2>
-    <ul>
-        <li><a href="index.php" aria-label="Go to Home">Home</a></li>
+<aside class="sidebar" id="sidebar">
+  <h2>University Portal</h2>
+  <nav>
+    <a href="index.php">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3"/>
+      </svg>
+      Dashboard
+    </a>
 
-        <?php if(isset($_SESSION['user_id'])): ?>
-            <?php if($_SESSION['user_role'] == 'teacher'): ?>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Actions <span>▼</span></a>
-                    <div class="dropdown-content">
-                        <a href="create-assignment.php">Create Assignment</a>
-                        <a href="view-submissions.php">View Submissions</a>
-                        <a href="manage-classes.php">Manage Classes</a>
-                    </div>
-                </li>
-            <?php else: ?>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle">Actions <span>▼</span></a>
-                    <div class="dropdown-content">
-                        <a href="my-assignments.php">My Assignments</a>
-                        <a href="my-submissions.php">My Submissions</a>
-                    </div>
-                </li>
-            <?php endif; ?>
+    <?php if(isset($_SESSION['user_id'])): ?>
+      <?php if($_SESSION['user_role'] == 'teacher'): ?>
+        <a href="create-assignment.php">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 4v16m8-8H4"/>
+          </svg>
+          Create Assignment
+        </a>
+        <a href="view-submissions.php">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 17v-6h13M9 17h-3a4 4 0 010-8h3"/>
+          </svg>
+          View Submissions
+        </a>
+        <a href="manage-classes.php">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 17v-6h13M9 17h-3a4 4 0 010-8h3"/>
+          </svg>
+          Manange Class
+        </a>
+      <?php else: ?>
+        <a href="my-assignments.php">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 20h9"/>
+          </svg>
+          My Assignments
+        </a>
+        <a href="my-submissions.php">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 20h9"/>
+          </svg>
+          My Submissions
+        </a>
+      <?php endif; ?>
+      <a href="profile.php">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5.121 17.804A4 4 0 0112 21a4 4 0 016.879-3.196M12 7a4 4 0 100-8 4 4 0 000 8z"/>
+        </svg>
+        Profile
+      </a>
+      <a href="logout.php">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7"/>
+        </svg>
+        Logout
+      </a>
+    <?php else: ?>
+      <a href="login.php">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+        Login
+      </a>
+      <a href="register.php">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 4v16m8-8H4"/>
+        </svg>
+        Register
+      </a>
+    <?php endif; ?>
+  </nav>
+</aside>
 
-            <li><a href="profile.php" aria-label="Go to Profile">Profile</a></li>
-            <li><a href="logout.php" aria-label="Logout">Logout</a></li>
-        <?php else: ?>
-            <li><a href="login.php" aria-label="Login">Login</a></li>
-            <li><a href="register.php" aria-label="Register">Register</a></li>
-        <?php endif; ?>
-    </ul>
-</div>
+<!-- Main Content -->
+<!-- <div class="main">
+  <h1>Welcome to the University Assignment System</h1>
+</div> -->
 
-<!-- JavaScript -->
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const sidebar = document.querySelector('.sidebar');
-        const toggleButton = document.querySelector('.menu-toggle');
-        const overlay = document.querySelector('.overlay');
-        const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-        // Toggle Sidebar
-        toggleButton.addEventListener('click', function () {
-            sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
-
-        // Close Sidebar When Clicking Outside
-        overlay.addEventListener('click', function () {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        // Toggle Dropdown Menus
-        dropdownToggles.forEach(toggle => {
-            toggle.addEventListener('click', function (event) {
-                event.preventDefault();
-                this.parentElement.classList.toggle('active');
-                const dropdownContent = this.nextElementSibling;
-
-                if (this.parentElement.classList.contains('active')) {
-                    dropdownContent.style.display = 'flex';
-                } else {
-                    dropdownContent.style.display = 'none';
-                }
-
-                // Close other dropdowns
-                dropdownToggles.forEach(otherToggle => {
-                    if (otherToggle !== this) {
-                        otherToggle.parentElement.classList.remove('active');
-                        otherToggle.nextElementSibling.style.display = 'none';
-                    }
-                });
-            });
-        });
-    });
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
 </script>
 
 </body>
