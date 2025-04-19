@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             justify-content: center;
             align-items: center;
             height: 100vh;
+            overflow: hidden;
         }
 
         .container {
@@ -71,16 +72,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             max-width: 800px;
             background-color: #fff;
             padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            /* border-radius: 12px; */
+            /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); */
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+            border-left:5px solid  rgb(30, 42, 76);
         }
 
         h2 {
-            font-size: 28px;
+            font-size: 30px;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+            
         }
 
         .form-group {
@@ -88,11 +91,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         label {
-            font-size: 16px;
-            font-weight: 500;
-            color: #555;
             display: block;
+            font-weight: bold;
             margin-bottom: 5px;
+            color: #555;
         }
 
         input, select {
@@ -112,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .btn {
             width: 100%;
             padding: 14px;
-            background-color: #3498db;
+            background:rgb(9, 29, 55);
             color: white;
             border: none;
             border-radius: 8px;
@@ -123,7 +125,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .btn:hover {
-            background-color: #2980b9;
+            background:rgba(9, 29, 55, 0.7);
         }
 
         .message {
@@ -132,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             font-size: 16px;
             text-align: center;
             margin-bottom: 20px;
+            
         }
 
         .error-message {
@@ -151,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         a {
-            color: #3498db;
+            color: red;
             text-decoration: none;
             font-weight: 500;
         }
@@ -163,7 +166,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="container">
-        <h2>University Registration</h2>
+        <h2>Registration</h2>
 
         <?php if (!empty($error)): ?>
             <div class="message error-message"><?php echo $error; ?></div>

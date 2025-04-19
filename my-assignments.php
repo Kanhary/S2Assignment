@@ -83,16 +83,17 @@ usort($filtered_assignments, function($a, $b) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Assignments - Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <style>
         /* Assignment Page Enhancements */
 main {
-    margin-left: 260px;
+    margin-left: 300px;
     width: calc(100% - 260px);
     min-height: 100vh;
     background-color: #f5f7fa;
-    padding: 40px;
+    /* padding: 40px; */
     font-family: 'Segoe UI', sans-serif;
+    padding-top: 15px;
 }
 
 h2 {
@@ -108,14 +109,20 @@ h2 {
     margin-bottom: 25px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
+    box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+    border-left:5px solid  rgb(30, 42, 76);
 }
+
+
 
 .assignment-card:hover {
     transform: scale(1.01);
 }
 
 .assignment-card.submitted {
-    border-left: 5px solid #2ecc71;
+    box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+    border-left:5px solid  rgb(30, 42, 76);
+    max-width: 400px
 }
 .assignment-card.overdue {
     border-left: 5px solid #e74c3c;
@@ -166,7 +173,7 @@ h2 {
 .assignment-actions .btn-small {
     padding: 8px 14px;
     margin-right: 10px;
-    background: #3498db;
+    background:rgb(9, 29, 55);
     border: none;
     border-radius: 5px;
     color: white;
@@ -176,7 +183,7 @@ h2 {
 }
 .assignment-actions .btn:hover,
 .assignment-actions .btn-small:hover {
-    background: #2980b9;
+    background:rgba(9, 29, 55, 0.7);
 }
 
 .filter-controls {
@@ -195,7 +202,7 @@ h2 {
     color: #2c3e50;
 }
 .filter-link.active {
-    background: #3498db;
+    background:rgb(9, 29, 55);
     color: white;
 }
 
@@ -307,7 +314,7 @@ h2 {
                 <h2>My Assignments</h2>
                 
                 <div class="filter-controls">
-                    <p>Filter by status:</p>
+                    <!-- <p>Filter by status:</p> -->
                     <a href="my-assignments.php?filter=all" class="filter-link <?php echo $filter == 'all' ? 'active' : ''; ?>">All</a>
                     <a href="my-assignments.php?filter=pending" class="filter-link <?php echo $filter == 'pending' ? 'active' : ''; ?>">Pending</a>
                     <a href="my-assignments.php?filter=submitted" class="filter-link <?php echo $filter == 'submitted' ? 'active' : ''; ?>">Submitted</a>

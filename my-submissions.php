@@ -83,7 +83,7 @@ h2 {
   color: #111827;
   margin-bottom: 24px;
   padding-left: 12px;
-  border-left: 4px solid #3b82f6;
+  /* border-left: 4px solid #3b82f6; */
 }
 
 .submission-details,
@@ -94,6 +94,8 @@ h2 {
   padding: 24px;
   margin-bottom: 32px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+  border-left:5px solid  rgb(30, 42, 76);
 }
 
 .submission-details h3 {
@@ -119,7 +121,8 @@ h2 {
 
 .content-box {
   background-color: #f3f4f6;
-  border-left: 4px solid #3b82f6;
+  /* border-left: 4px solid #3b82f6;
+   */
   padding: 16px;
   border-radius: 8px;
   font-size: 14px;
@@ -191,7 +194,7 @@ th {
   display: inline-block;
   padding: 8px 14px;
   font-size: 14px;
-  background-color: #3b82f6;
+  background:rgb(9, 29, 55);
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -200,7 +203,7 @@ th {
 }
 
 .btn-small:hover {
-  background-color: #2563eb;
+  background:rgba(9, 29, 55, 0.7);
 }
 
 .back-link {
@@ -256,7 +259,7 @@ th {
                 <!-- View specific submission details -->
                 <div class="submission-details">
                     <div class="back-link">
-                        <a href="my-submissions.php" class="btn-small">Back to All Submissions</a>
+                        <!-- <a href="my-submissions.php" class="btn-small">Back to All Submissions</a> -->
                     </div>
                     
                     <h2>Submission Details</h2>

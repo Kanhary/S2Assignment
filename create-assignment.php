@@ -36,15 +36,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <title>Create Assignment - Assignment Collection System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <style>
         body {
+
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fc;
+            /* position: relative; */
         }
 
         main {
+            
+            /* width: 50%; */
+            position: absolute;
+            right: 0px;
+            left: 0;
             margin-left: 250px;
             padding: 40px;
             min-height: 100vh;
@@ -57,9 +64,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin: 0 auto;
             padding: 30px 40px;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); */
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+            border-left:5px solid  rgb(30, 42, 76);
         }
 
+        
         .form-container h2 {
             text-align: center;
             margin-bottom: 30px;
@@ -73,9 +83,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #444;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
         }
 
         input[type="text"],
@@ -89,6 +99,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 8px;
             box-sizing: border-box;
             transition: border-color 0.3s;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
         }
 
         input:focus,
@@ -103,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .btn {
-            background-color: #5c9ded;
+            background:rgb(9, 29, 55);
             color: white;
             padding: 12px 20px;
             font-size: 16px;
@@ -115,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .btn:hover {
-            background-color: #4a89dc;
+            background:rgba(9, 29, 55, 0.7);
         }
 
         .error-message,

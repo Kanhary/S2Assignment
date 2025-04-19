@@ -23,7 +23,7 @@ if (!$submission) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Submission - Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -71,6 +71,8 @@ if (!$submission) {
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+        border-left:5px solid  rgb(30, 42, 76);
         }
         .submission-details h4 {
             font-size: 18px;
@@ -80,7 +82,7 @@ if (!$submission) {
         .submission-details p {
             font-size: 16px;
             color: #666;
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .content-box {
             background-color: #fff;
@@ -113,7 +115,7 @@ if (!$submission) {
         }
         .feedback-box {
             background-color: #fff;
-            padding: 10px;
+            padding: 20px;
             border-radius: 8px;
             border-left: 4px solid #3c8dbc;
             font-size: 16px;
@@ -124,7 +126,7 @@ if (!$submission) {
             margin-top: 20px;
         }
         .btn-update {
-            background-color: #f39c12;
+            background:rgb(9, 29, 55);  
         }
         .btn-grade {
             background-color: #00a65a;
@@ -136,9 +138,9 @@ if (!$submission) {
         <?php include 'includes/sidebar.php'; ?>
 
         <main>
-            <div class="back-link">
-                <a href="view-submissions.php" class="btn">← Back to Submissions</a>
-            </div>
+                <!-- <div class="back-link">
+                    <a href="view-submissions.php" class="btn">Back to Submissions</a>
+                </div> -->
 
             <section class="submission-details">
                 <h2><?php echo htmlspecialchars($submission['assignment_title'] ?? 'No Title'); ?></h2>

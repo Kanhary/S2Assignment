@@ -69,6 +69,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <style>
 
+        body{
+            overflow: hidden;
+        }
         .container {
             width: 100%;
             display: flex;
@@ -107,7 +110,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             background-color: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+            border-left:5px solid  rgb(30, 42, 76);
         }
         .submission-info h3 {
             font-size: 22px;
@@ -175,7 +179,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             resize: vertical;
         }
         .form-group button {
-            background-color: #3c8dbc;
+            background:rgb(9, 29, 55);
             color: white;
             padding: 10px 20px;
             border: none;
@@ -184,7 +188,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             cursor: pointer;
         }
         .form-group button:hover {
-            background-color: #367fa9;
+            background:rgba(9, 29, 55, 0.7);
         }
         .error-message, .success-message {
             background-color: #f2dede;
@@ -204,9 +208,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <?php include 'includes/sidebar.php'; ?>
         
         <main>
-            <div class="back-link">
+            <!-- <div class="back-link">
                 <a href="view-submissions.php" class="btn-small">Back to Submissions</a>
-            </div>
+            </div> -->
             
             <h2>Grade Submission</h2>
             

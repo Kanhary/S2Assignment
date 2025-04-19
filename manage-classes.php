@@ -226,13 +226,15 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
     } */
 
     main {
-        margin-left: 250px;
+            margin-left: 300px;
             padding: 20px;
             width: 100%;
             /* background-color: #ffffff; */
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: margin-left 0.3s ease;
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+            border-left:5px solid  rgb(30, 42, 76);
     }
 
     h2, h3, h4 {
@@ -261,44 +263,51 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
 
     .form-group label {
         display: block;
-        margin-bottom: 5px;
         font-weight: bold;
+        margin-bottom: 5px;
+        color: #555;
     }
 
     .form-group input, .form-group textarea, .form-group select {
         width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
         font-size: 1em;
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s;
+        margin-bottom:10px;
     }
 
     .form-group button {
         padding: 10px 20px;
-        background-color: #4CAF50;
+        background:rgb(9, 29, 55);
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 1em;
+        margin: 10px 0px    
     }
 
     .form-group button:hover {
-        background-color: #45a049;
+        background:rgba(9, 29, 55, 0.7);
     }
 
     .btn-small {
         padding: 5px 10px;
-        background-color: #007bff;
+        background:rgb(9, 29, 55);
         color: white;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 0.9em;
+        text-decoration: none;
+        /* margin: 10px 0px; */
     }
 
     .btn-small:hover {
-        background-color: #0056b3;
+        background:rgba(9, 29, 55, 0.7);
     }
 
     .classes-list table, .class-students table {
@@ -326,7 +335,7 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
     }
 
     .back-link a {
-        color: #007bff;
+        color: white;
         text-decoration: none;
     }
 
@@ -361,7 +370,7 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
                     <h3>Manage Students in <?php echo htmlspecialchars($current_class['name']); ?></h3>
                     
                     <div class="back-link">
-                        <a href="manage-classes.php" class="btn-small">Back to Classes</a>
+                        <a href="manage-classes.php" class="btn-small">Back</a>
                     </div>
                     
                     <div class="class-students">
@@ -444,7 +453,7 @@ if(isset($_GET['remove_student']) && isset($_GET['class_id']) && isset($_GET['st
             <?php else: ?>
                 <!-- Create class form -->
                 <div class="create-class">
-                    <h3>Create New Class</h3>
+                    <!-- <h3>Create New Class</h3> -->
                     
                     <form action="manage-classes.php" method="post">
                         <div class="form-group">

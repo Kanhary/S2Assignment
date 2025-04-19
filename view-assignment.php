@@ -44,22 +44,25 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
     }
 
     .assignment-detail {
-        margin-left: 250px;
+        margin-left: 300px;
         padding: 40px;
-        width: calc(100% - 250px);
+        width: 50%;
+        /* width: calc(100% - 250px); */
         background-color: #ffffff;
         border-radius: 12px;
         margin-top: 30px;
         margin-bottom: 30px;
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
         transition: margin-left 0.3s ease;
+        box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+        border-left:5px solid  rgb(30, 42, 76);
     }
 
     h2 {
         margin-top: 0;
         font-size: 28px;
         color: #2c3e50;
-        border-bottom: 2px solid #3498db;
+        /* border-bottom: 2px solid #3498db; */
         padding-bottom: 10px;
         margin-bottom: 20px;
     }
@@ -68,6 +71,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
         line-height: 1.8;
         font-size: 16px;
         color: #555;
+        padding: 10px 0px;
     }
 
     strong {
@@ -109,7 +113,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
     }
 
     .btn-download {
-        background-color: #2ecc71;
+        background:rgb(9, 29, 55);
         color: #fff;
         padding: 9px 16px;
         border-radius: 8px;
@@ -122,7 +126,7 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
     }
 
     .btn-download:hover {
-        background-color: #27ae60;
+        background:rgba(9, 29, 55, 0.7);    
     }
 
     .status {

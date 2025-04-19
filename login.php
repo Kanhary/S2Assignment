@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Assignment Collection System</title>
+    <title>Login</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -44,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             display: flex;
             /* justify-content: center;
             align-items: center; */
+            overflow:  hidden;
            
         }
 
@@ -65,9 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             max-width: 450px;
             /* background: #ffffff; */
             padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            /* border-radius: 10px; */
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+            border-left:5px solid  rgb(30, 42, 76);
+            /* text-align: center; */
         }
 
         .auth-form h2 {
@@ -95,6 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             border: 1px solid #ccc;
             border-radius: 5px;
             transition: border-color 0.3s;
+            margin-bottom:10px;
         }
 
         .auth-form input:focus {
@@ -105,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         .auth-form .btn {
             width: 100%;
             padding: 12px;
-            background: #3498db;
+            background:rgb(9, 29, 55);
             color: white;
             border: none;
             border-radius: 5px;
@@ -116,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .auth-form .btn:hover {
-            background: #2980b9;
+            background:rgba(9, 29, 55, 0.7);
         }
 
         .error-message {
@@ -127,9 +130,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         /* Footer */
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 14px;
             color: #777;
+        }
+        .footer a{
+            color:red;
         }
 
         /* Responsive Design */
@@ -179,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Main Content -->
     <main class="main-content">
         <div class="auth-form">
-            <h2>Login</h2>
+            <h2>LOG IN</h2>
 
             <?php if (!empty($error)): ?>
                 <div class="error-message"><?php echo $error; ?></div>
@@ -187,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <form action="login.php" method="post">
                 <div class="form-group">
-                    <label for="email">Email</label>
+                    <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 

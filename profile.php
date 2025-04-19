@@ -72,6 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             justify-content: center;
             align-items: center;
             margin-left: 680px;
+            
         }
 
         .profile-card {
@@ -80,21 +81,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            /* text-align: center; */
+            box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+            border-left:5px solid  rgb(30, 42, 76);
         }
 
         .profile-card h2 {
-            font-size: 26px;
+            font-size: 28px;
+            font-weight: 600px;
             margin-bottom: 20px;
         }
 
         .profile-card input {
             width: 100%;
             padding: 12px;
-            font-size: 16px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 5px;
-            margin-top: 5px;
+            transition: border-color 0.3s;
+            margin-bottom:10px;
+
+        }
+        .form-group{
+            padding: 10px 0px;
+        }
+        .form-group label{
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
         }
 
         .profile-card .role {

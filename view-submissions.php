@@ -49,7 +49,7 @@ $assignments = getTeacherAssignments($_SESSION['user_id']);
     font-weight: 700;
     color: #2c3e50;
     margin-bottom: 10px;
-    border-bottom: 2px solid #3498db;
+    /* border-bottom: 2px solid #3498db; */
     padding-bottom: 10px;
 }
 
@@ -126,7 +126,7 @@ $assignments = getTeacherAssignments($_SESSION['user_id']);
 
 .submissions-table td a {
     text-decoration: none;
-    color: #3498db;
+    color:rgb(9, 29, 55);
     background-color: #ecf0f1;
     padding: 8px 16px;
     border-radius: 5px;
@@ -135,7 +135,7 @@ $assignments = getTeacherAssignments($_SESSION['user_id']);
 }
 
 .submissions-table td a:hover {
-    background-color: #3498db;
+    background:rgb(9, 29, 55);
     color: #fff;
 }
 
