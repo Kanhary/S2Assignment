@@ -44,9 +44,10 @@ if (isset($_SESSION['user_id']) && $_SESSION['user_role'] == 'student') {
     }
 
     .assignment-detail {
-        margin-left: 300px;
+        margin-left: 550px;
         padding: 40px;
         width: 50%;
+        height: 600px;
         /* width: calc(100% - 250px); */
         background-color: #ffffff;
         border-radius: 12px;

@@ -80,7 +80,152 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submit Assignment - Assignment Collection System</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+
+    <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f5f7fa;
+        color: #333;
+    }
+
+    main {
+        margin-left: 300px;
+        width: calc(100% - 300px);
+        min-height: 100vh;
+        padding: 40px 20px;
+        background-color: #f5f7fa;
+    }
+
+    .form-container {
+        background-color: #fff;
+        padding: 30px 35px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
+        border-left:5px solid  rgb(30, 42, 76);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .form-container h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        color: #2c3e50;
+    }
+
+    .form-container h3 {
+        font-size: 22px;
+        margin-bottom: 5px;
+        color: #34495e;
+    }
+
+    .due-date {
+        color: #e74c3c;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .form-container p {
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: #2d3436;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        resize: vertical;
+        font-size: 16px;
+        font-family: inherit;
+        min-height: 180px;
+        transition: border-color 0.2s ease-in-out;
+    }
+
+    textarea:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+
+    input[type="file"] {
+        display: block;
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    .help-text {
+        font-size: 13px;
+        color: #7f8c8d;
+    }
+
+    .btn {
+        background:rgb(9, 29, 55);
+        color: #fff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: #2980b9;
+    }
+
+    .error-message {
+        background-color: #ffe6e6;
+        color: #c0392b;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 1px solid #e74c3c;
+    }
+
+    .success-message {
+        background-color: #e8f9e8;
+        color: #27ae60;
+        padding: 12px 16px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 1px solid #2ecc71;
+    }
+
+    .success-message a {
+        color: #2980b9;
+        text-decoration: underline;
+        font-weight: 500;
+    }
+
+    @media screen and (max-width: 768px) {
+        main {
+            margin-left: 0;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .form-container {
+            padding: 25px 20px;
+        }
+    }
+</style>
+
 </head>
 <body>
 

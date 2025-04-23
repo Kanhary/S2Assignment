@@ -91,6 +91,7 @@ main {
     width: calc(100% - 260px);
     min-height: 100vh;
     background-color: #f5f7fa;
+    padding: 0px 10px;
     /* padding: 40px; */
     font-family: 'Segoe UI', sans-serif;
     padding-top: 15px;
@@ -119,11 +120,12 @@ h2 {
     transform: scale(1.01);
 }
 
-.assignment-card.submitted {
+.assignment-card{
     box-shadow: 0 4px 20px rgba(31, 45, 84, 0.26);
     border-left:5px solid  rgb(30, 42, 76);
     max-width: 400px
 }
+
 .assignment-card.overdue {
     border-left: 5px solid #e74c3c;
 }
@@ -133,7 +135,11 @@ h2 {
     margin-bottom: 10px;
     color: #34495e;
 }
-
+.assignments-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
 .assignment-info p,
 .assignment-card p {
     margin: 6px 0;

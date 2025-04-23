@@ -52,26 +52,119 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Assignment</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <style>
-            body {
-            font-family: 'Arial', sans-serif;
-            /* background-color: #f0f4f8; */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f5f7fa;
             display: flex;
-            /* justify-content: center;
-            align-items: center; */
-           
         }
-        main {
-            margin-left: 250px;
-            padding: 20px;
+
+        .assignment-form {
+            margin-left: 570px;
+            margin-top: 40px;
+            padding: 40px 30px;
+            background-color: #fff;
+            width: 50%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #1e2a4c;
+            height: 600px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            /* border-bottom: 2px solid #3498db; */
+            padding-bottom: 10px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
             width: 100%;
-            /* background-color: #ffffff; */
+            padding: 12px 14px;
+            border: 1px solid #ccc;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            transition: margin-left 0.3s ease;
+            font-size: 15px;
+            box-sizing: border-box;
+            margin-top: 4px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 25px;
+            margin-right: 12px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-secondary {
+            background-color: #bdc3c7;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-secondary:hover {
+            background-color: #95a5a6;
+        }
+
+        .error {
+            color: #e74c3c;
+            background: #fdecea;
+            border: 1px solid #e0b4b4;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .assignment-form {
+                margin-left: 0;
+                margin-top: 20px;
+                width: 100%;
+                padding: 30px 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+
+            .btn {
+                padding: 9px 18px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
